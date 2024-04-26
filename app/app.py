@@ -28,4 +28,12 @@ app.layout = html.Div(
 )
 
 if __name__ == "__main__":
-    app.run_server(host=os.getenv("HOST"), port=os.getenv("PORT"), debug=True)
+    app.run_server(
+        host=(
+            os.getenv("APP_HOST_DOCKER")
+            if os.getenv("RUN_LOCATION") == "Docker"
+            else os.getenv("APP_HOST_LOCAL")
+        ),
+        port=os.getenv("APP_PORT"),
+        debug=True,
+    )
