@@ -39,5 +39,7 @@ WORKDIR /app
 # Install runtime dependencies
 RUN poetry install --no-dev --no-interaction --no-ansi
 
+EXPOSE 8047
+
 # Run the application:
 CMD ["poetry", "run", "python", "app.py"]
