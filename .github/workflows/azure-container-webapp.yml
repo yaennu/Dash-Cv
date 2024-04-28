@@ -64,6 +64,15 @@ jobs:
           tags: ghcr.io/${{ env.REPO }}:latest
           file: ./Dockerfile
 
+      - name: Login to Azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Update web app configuration
+        run: |
+          az webapp config container set --name ${{ env.AZURE_WEBAPP_NAME }} --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} --docker-custom-image-name ghcr.io/${{ env.REPO }}:latest --docker-registry-server-url https://ghcr.io --docker-registry-server-user ${{ github.actor }} --docker-registry-server-password ${{ secrets.GHCR_TOKEN }}
+
   deploy:
     permissions:
       contents: none
