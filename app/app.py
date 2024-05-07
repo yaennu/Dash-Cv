@@ -35,5 +35,5 @@ if __name__ == "__main__":
             else os.getenv("APP_HOST_LOCAL")
         ),
         port=os.getenv("APP_PORT"),
-        debug=True,
+        debug=(False if os.getenv("RUN_LOCATION") == "Docker" else True),
     )

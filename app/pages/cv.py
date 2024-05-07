@@ -5,7 +5,7 @@ from py_plot_ge import plotly_ge as pg
 import utils.DbData as db
 from dash import Input, Output, callback, dcc, html
 
-dash.register_page(__name__, path="/", name="Lebenslauf")
+dash.register_page(__name__, name="CV")
 
 
 layout = html.Div(

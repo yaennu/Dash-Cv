@@ -4,7 +4,7 @@ import plotly.graph_objects as go
 import utils.DbData as db
 from dash import Input, Output, callback, dcc, html
 
-dash.register_page(__name__, name="Interessen")
+dash.register_page(__name__, name="Skills")
 
 
 layout = html.Div(
