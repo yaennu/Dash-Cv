@@ -1,10 +1,15 @@
 /* Define color */
 :root {
-  --MainColor: #009900;
-  --InactiveColor: #b3ffb3;
-  --HoverColor: #e6ffe6;
-  --Background: #e6ffe6;
-  --Border: #009900;
+  --main-color: #009900;
+  --main-inactive-color: #b3ffb3;
+  --main-hover-color: #e6ffe6;
+  --main-sidebar-background: #e6ffe6;
+  --main-border-color: #009900;
+  --main-font-color: black;
+  --main-background-color: white;
+  --main-font-family: Arial;
+  --main-font-size: 0.8rem;
+  --main-margin-left: 25px;
 }
 
 html {
@@ -12,10 +17,22 @@ html {
 }
 
 body {
-  background: white;
-  color: black;
-  font-family: Arial;
-  font-size: 0.8rem;
+  background: var(--main-background-color);
+  color: var(--main-font-color);
+  font-family: var(--main-font-family);
+  font-size: var(--main-font-size);
+}
+
+p {
+  background: var(--main-background-color);
+  color: var(--main-font-color);
+  font-family: var(--main-font-family);
+  font-size: var(--main-font-size);
+  margin-left: var(--main-margin-left);
+}
+
+ul {
+  margin-left: var(--main-margin-left);
 }
 
 /* Section headings*/
@@ -29,8 +46,8 @@ h1 {
   font-weight: bold;
   margin-top: 30px;
   margin-bottom: 30px;
-  margin-left: 25px;
-  color: var(--MainColor);
+  margin-left: var(--main-margin-left);
+  color: var(--main-color);
 }
 
 h2 {
@@ -38,21 +55,23 @@ h2 {
   font-weight: bold;
   margin-top: 25px;
   margin-bottom: 20px;
-  color: var(--MainColor);
+  margin-left: var(--main-margin-left);
+  color: var(--main-color);
 }
 
 h3 {
   font-size: 1rem;
   font-weight: bold;
-  color: var(--MainColor);
+  color: var(--main-color);
   margin-top: 0px;
   margin-bottom: 20px;
+  margin-left: var(--main-margin-left);
 }
 
 h4 {
   font-size: 0.9rem;
   font-weight: bold;
-  color: var(--MainColor);
+  color: var(--main-color);
   margin-top: 0px;
   margin-bottom: 5px;
 }
@@ -87,12 +106,12 @@ h6 {
 }
 
 .nav-pills .nav-link:hover {
-  background-color: var(--InactiveColor);
+  background-color: var(--main-inactive-color);
   color: black;
 }
 
 .nav-pills .nav-link.active {
-  background-color: var(--MainColor);
+  background-color: var(--main-color);
   color: white;
 }
 
@@ -102,11 +121,11 @@ h6 {
 }
 
 /* First child of container: sidepanel */
-.flex-child:first-child {
+.flex-child:first-child:not(h1) {
   margin-right: 20px;
-  border: 1px solid var(--Border);
+  border: 1px solid var(--main-border-color);
   border-radius: 4px;
-  background-color: var(--Background);
+  background-color: var(--main-sidebar-background);
   padding: 25px;
   flex: 0 0 300px;
 }
@@ -130,10 +149,10 @@ input {
   font-size: 1.2rem;
   border-radius: 4px;
   font-weight: bold;
-  color: var(--MainColor);
+  color: var(--main-color);
 }
 
 /* Tab-style selected */
 .tab--selected.jsx-3468109796 {
-  color: var(--MainColor) !important;
+  color: var(--main-color) !important;
 }
