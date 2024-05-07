@@ -16,6 +16,10 @@
     * Add all the necessary environment variables from the .env file to the Azure Web App (Environment variables > New application setting).
     * Replace ${{ env.REPO }}:${{ github.sha }} with ${{ env.REPO }}:latest in the GitHub Actions workflow file.
 
+# IP-Address
+* To get the IP address of my local machine: Test-NetConnection -ComputerName yscv.database.windows.net -Port 1433
+* Add SourceAddress to firewall rule on Azure.
+
 # TODO
 * Dropdown for technical and social skills
 * 
