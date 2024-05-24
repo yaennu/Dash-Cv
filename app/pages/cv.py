@@ -7,42 +7,44 @@ from dash import Input, Output, callback, dcc, html, dash_table
 
 dash.register_page(__name__, name="CV")
 
+# Create the figure
+fig = go.Figure()
+for Thema in pd.unique(db.Cv["Thema"]):
+    fig.add_trace(
+        go.Scatter(
+            x=db.Cv[db.Cv["Thema"] == Thema]["Start"],
+            y=db.Cv[db.Cv["Thema"] == Thema]["ThemaWert"],
+            mode="lines+markers",
+            name=Thema,
+            text=db.Cv[db.Cv["Thema"] == Thema]["Bezeichnung"],
+        )
+    )
+pg.plotly_gelayout(
+    fig,
+    hovermode="x unified",
+    plot_title="Lebenslauf",
+)
+fig.update_yaxes(showticklabels=False, showgrid=False, autorange="reversed")
+
+# Prepare data for table
+table_data = db.Cv[["Thema", "Start", "Ende", "Ort", "Bezeichnung"]]
 
 layout = html.Div(
     children=[
         html.Div(
-            className="flex-container",
-            children=[
-                html.Div(
-                    className="flex-child",
-                    children=[
-                        html.Div(
-                            className="selector-box",
-                            children=[
-                                html.H4("Auswahl:"),
-                                dcc.Dropdown(
-                                    ["Cv", "Interests"],
-                                    "Cv",
-                                    id="Dropdown",
-                                ),
-                            ],
-                        ),
-                    ],
-                ),
-                html.Div(
-                    className="flex-child",
-                    children=[
-                        dcc.Graph(id="CvPlot"),
-                        html.H5("""Bemerkung"""),
-                    ],
-                ),
-            ],
+            html.Div(
+                children=[
+                    dcc.Graph(id="CvPlot", figure=fig),
+                ],
+            ),
+            style={'margin-bottom': '33px'},
         ),
+
         html.Div(
             dash_table.DataTable(
-                data=db.Cv.to_dict('records'),
+                data=table_data.to_dict('records'),
                 columns=[
-                    {"name": i, "id": i} for i in db.Cv.columns
+                    {"name": i, "id": i} for i in table_data
                 ],
                 filter_action="native",
                 sort_action="native",
@@ -53,35 +55,3 @@ layout = html.Div(
         )
     ]
 )
-
-
-@callback(
-    Output(component_id="CvPlot", component_property="figure"),
-    Input(component_id="Dropdown", component_property="value"),
-)
-def incoming_plot(Dropdown):
-    if Dropdown == "Cv":
-        fig = go.Figure()
-        for Thema in pd.unique(db.Cv["Thema"]):
-            fig.add_trace(
-                go.Scatter(
-                    x=db.Cv[db.Cv["Thema"] == Thema]["Start"],
-                    y=db.Cv[db.Cv["Thema"] == Thema]["Wert"],
-                    mode="lines+markers",
-                    name=Thema,
-                    text=db.Cv[db.Cv["Thema"] == Thema]["Bezeichnung"],
-                    hoveron="points+fills",
-                )
-            )
-            fig.update_traces(
-                hovertemplate="Ab %{x}<br>%{text}<extra></extra>")
-
-        # GE layout for plot
-        pg.plotly_gelayout(
-            fig,
-            hovermode="closest",
-            yaxis_title="Wert",
-            plot_title="Lebenslauf",
-        )
-
-    return fig
