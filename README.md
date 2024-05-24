@@ -21,5 +21,12 @@
 * Add SourceAddress to firewall rule on Azure.
 
 # TODO
+CV-page
+* single view of categories?
+
+Skills-page
 * Dropdown for technical and social skills
-* 
+* social skills: explain, collaboration, requirements engineering, negotiation, 
+    reporting, summarising, presentation
+
+* make page not go down

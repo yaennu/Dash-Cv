@@ -10,9 +10,8 @@ layout = html.Div(
         html.H3("Interactive CV Website"),
         html.Div(
             html.P([
-                """This is the Curriculum Vitae website of Yannick Schwarz. 
-                It is the attempt to visualise the CV in a more interactive way.""", html.Br(),
-                "The values shown in the graphs should not be taken too seriously. \U0001F609"
+                """This is the curriculum vitae website of Yannick Schwarz. 
+                It is the attempt to visualise the CV in a more interactive way. \U0001F389"""
             ])
         ),
         html.H3("Technical Background of this Website"),

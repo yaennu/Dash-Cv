@@ -156,3 +156,7 @@ input {
 .tab--selected.jsx-3468109796 {
   color: var(--main-color) !important;
 }
+
+.dash-table-container .dash-spreadsheet-container .dash-spreadsheet-inner table {
+  font-family: Helvetica, sans-serif;
+}

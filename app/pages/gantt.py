@@ -5,7 +5,7 @@ from py_plot_ge import plotly_ge as pg
 import utils.DbData as db
 from dash import Input, Output, callback, dcc, html, dash_table
 
-dash.register_page(__name__, name="CV")
+dash.register_page(__name__, name="Zeitstrahl")
 
 
 layout = html.Div(
@@ -32,31 +32,18 @@ layout = html.Div(
                 html.Div(
                     className="flex-child",
                     children=[
-                        dcc.Graph(id="CvPlot"),
+                        dcc.Graph(id="GanttPlot"),
                         html.H5("""Bemerkung"""),
                     ],
                 ),
             ],
         ),
-        html.Div(
-            dash_table.DataTable(
-                data=db.Cv.to_dict('records'),
-                columns=[
-                    {"name": i, "id": i} for i in db.Cv.columns
-                ],
-                filter_action="native",
-                sort_action="native",
-                selected_columns=[],
-                page_current=0,
-                page_size=10,
-            )
-        )
     ]
 )
 
 
 @callback(
-    Output(component_id="CvPlot", component_property="figure"),
+    Output(component_id="GanttPlot", component_property="figure"),
     Input(component_id="Dropdown", component_property="value"),
 )
 def incoming_plot(Dropdown):
@@ -70,7 +57,6 @@ def incoming_plot(Dropdown):
                     mode="lines+markers",
                     name=Thema,
                     text=db.Cv[db.Cv["Thema"] == Thema]["Bezeichnung"],
-                    hoveron="points+fills",
                 )
             )
             fig.update_traces(
