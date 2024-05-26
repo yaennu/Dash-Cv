@@ -6,7 +6,7 @@ dash.register_page(__name__, name="Projects")
 
 layout = html.Div(
     children=[
-        html.H1("Existing Projects"),
+        html.H3("Projects"),
         html.Ul([
             html.Li([
                 dcc.Link(
@@ -47,5 +47,26 @@ layout = html.Div(
                 sum for a living donation in Switzerland."""
             ]),
         ]),
+        html.H3("Technical Background of this Website"),
+        html.Ul([
+                html.Li("Data Preparation: Python"),
+                html.Li([
+                    "Version Control: Git (",
+                    dcc.Link(
+                        "GitHub repository",
+                        href="https://github.com/yaennu/Dash-Cv",
+                        target="_blank"
+                    ),
+                    ")"
+                ]),
+                html.Li("Testing: pytest"),
+                html.Li("Database: Azure SQL Server"),
+                html.Li("Frontend: Dash and Plotly (Python)"),
+                html.Li("Containerization: Docker"),
+                html.Li(
+                    "CI/CD: GitHub Actions (every push builds and deploys a new Docker container)"),
+                html.Li("Image Repository: GitHub Packages"),
+                html.Li("Hosting: Azure Web App Service"),
+                ]),
     ],
 )

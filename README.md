@@ -23,3 +23,5 @@
 # TODO
 * make page not go down
 * Social skills: data visualisation (attention to detail and get the gist), communication, problem solving
+* Kontaktdaten: mail adresse, handynummer, linkedin, alter, wohnort
+* Skills mit Sprachen ergänzen, Linkedin skills einbeziehen
