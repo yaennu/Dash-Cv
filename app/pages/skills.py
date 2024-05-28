@@ -16,11 +16,11 @@ layout = html.Div(
                 html.Div(
                     className="selector-box",
                     children=[
-                        html.H4("Auswahl:"),
-                        dcc.Dropdown(
-                            ["Cv", "Interests"],
-                            "Interests",
-                            id="Dropdown",
+                        html.H4("Skills:"),
+                        dcc.RadioItems(
+                            ["Technical", "Social", "Methodical"],
+                            "Technical",
+                            id="Radio",
                         ),
                     ],
                 ),
@@ -29,8 +29,7 @@ layout = html.Div(
         html.Div(
             className="flex-child",
             children=[
-                dcc.Graph(id="IntPlot"),
-                html.H5("""Bemerkung"""),
+                dcc.Graph(id="SkillPlot"),
             ],
         ),
     ],
@@ -38,16 +37,21 @@ layout = html.Div(
 
 
 @callback(
-    Output(component_id="IntPlot", component_property="figure"),
-    Input(component_id="Dropdown", component_property="value"),
+    Output(component_id="SkillPlot", component_property="figure"),
+    Input(component_id="Radio", component_property="value"),
 )
-def incoming_plot(Dropdown):
-    Dropdown = "Interests"
-    Categories = pd.unique(db.Interests.Bezeichnung)
+def incoming_plot(Radio):
+    if Radio == "Technical":
+        polar_data = db.Skills[db.Skills["Skill"] == "Technical"]
+    elif Radio == "Social":
+        polar_data = db.Skills[db.Skills["Skill"] == "Social"]
+    elif Radio == "Methodical":
+        polar_data = db.Skills[db.Skills["Skill"] == "Methodical"]
+    Categories = pd.unique(polar_data.Bezeichnung)
     fig = go.Figure()
     fig = fig.add_trace(
         go.Scatterpolar(
-            r=db.Interests[db.Interests["Thema"] == "Interesse"].Wert,
+            r=polar_data[polar_data["Level"] == "Soll"].Value,
             theta=Categories,
             fill="toself",
             name="Interesse",
@@ -55,7 +59,7 @@ def incoming_plot(Dropdown):
     )
     fig = fig.add_trace(
         go.Scatterpolar(
-            r=db.Interests[db.Interests["Thema"] == "Erfahrung"].Wert,
+            r=polar_data[polar_data["Level"] == "Ist"].Value,
             theta=Categories,
             fill="toself",
             name="Erfahrung",

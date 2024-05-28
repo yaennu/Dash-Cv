@@ -28,9 +28,6 @@ def db_load(conn, DbTable):
 
 
 Cv = db_load(conn=conn, DbTable="Cv")
-Hobbies = db_load(conn=conn, DbTable="Hobbies")
-Pensum = db_load(conn=conn, DbTable="Pensum")
-Interests = db_load(conn=conn, DbTable="Interests")
-Interests
+Skills = db_load(conn=conn, DbTable="Skills")
 
 conn.close()
