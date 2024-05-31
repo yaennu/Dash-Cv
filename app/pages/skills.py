@@ -16,7 +16,7 @@ layout = html.Div(
                 html.Div(
                     className="selector-box",
                     children=[
-                        html.H4("Skills:"),
+                        html.H1("Skills:"),
                         dcc.RadioItems(
                             db.Skills.Skill.unique(),
                             "Technical",
@@ -96,12 +96,13 @@ def incoming_plot(Radio):
                 r=r_interest,
                 theta=theta_cat,
                 name="Interesse",
-                # marker_color="blue",
+                # marker_color="orange",
             )
         )
     fig = fig.update_layout(
         polar=dict(radialaxis=dict(visible=True, range=[0, 5])),
         showlegend=True,
+        font=dict(family="Arial", size=14),
     )
     fig.update_traces(
         hovertemplate="%{theta}: %{r}",

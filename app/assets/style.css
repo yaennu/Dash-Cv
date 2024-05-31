@@ -1,12 +1,12 @@
 /* Define color */
 :root {
   --main-color: #6c26ee;
-  --main-inactive-color: #6c26ee41;
+  --main-inactive-pills-background-color: #6c26ee41;
+  --main-active-pills-font-color: #ffffff;
   --main-font-color: #000000;
   --main-font-family: Helvetica, Arial, sans-serif;
   --main-font-weight: normal;
   --main-font-size: 1rem;
-  --main-margin-left: 25px;
 }
 
 html {
@@ -18,72 +18,37 @@ body {
   font-family: var(--main-font-family);
   font-size: var(--main-font-size);
   font-weight: var(--main-font-weight);
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
 }
 
-p,
-.contact {
-  color: var(--main-font-color);
-  font-family: var(--main-font-family);
-  font-size: var(--main-font-size);
-  margin-left: var(--main-margin-left);
-}
-
-ul {
-  margin-left: var(--main-margin-left);
-}
-
-/* Section headings*/
-h1.title {
-  margin-right: 200px;
-  font-size: 2rem;
-}
-
-h1 {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  margin-left: var(--main-margin-left);
-  color: var(--main-color);
-}
-
-h2 {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-top: 25px;
-  margin-bottom: 20px;
-  margin-left: var(--main-margin-left);
-  color: var(--main-color);
-}
-
-h3 {
-  font-size: 1rem;
-  font-weight: bold;
-  margin-top: 2rem;
-  margin-bottom: 0px;
-  margin-left: var(--main-margin-left);
-  color: var(--main-color);
-}
-
-h4 {
-  font-size: 0.9rem;
-  font-weight: bold;
-  margin-top: 0px;
-  margin-bottom: 5px;
-  color: var(--main-color);
-}
-
-h5,
-h6 {
-  font-size: 0.8rem;
-  color: black;
-}
-
-/* Container for sidepanel and figure */
+/* Container for sidepanel and other divs */
 .flex-container {
-  display: flex !important;
-  margin: 25px;
+  display: flex;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
+
+.flex-child {
+  margin-left: 7rem;
+}
+
+.dash-graph {
+  display: flex;
+  margin: 0;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* First child of container: sidepanel 
+.flex-child:first-child:not(h1) {
+  margin-right: 20px;
+  padding: 25px;
+  flex: 0 0 300px;
+}*/
 
 /* Nav: Sidebar with pages */
 .flex-sidebar {
@@ -92,78 +57,71 @@ h6 {
   background-repeat: no-repeat;
   margin: 0;
   border-radius: 4px;
-  padding: 0px 0;
+  padding: 0;
   flex: 0 0 220px;
   font-weight: bold;
 }
 
+/* Navigation pill inactive */
 .nav-link {
   color: var(--main-color);
-  font-size: 0.9rem;
+  background-color: var(--main-inactive-pills-background-color);
+  font-size: 1rem;
+  margin-bottom: 7px;
 }
 
+/* Navigation pill hover */
 .nav-pills .nav-link:hover {
-  background-color: var(--main-inactive-color);
-  color: var(--main-color);
+  background-color: var(--main-color);
+  color: var(--main-active-pills-font-color);
 }
 
+/* Navigation pill active */
 .nav-pills .nav-link.active {
   background-color: var(--main-color);
-  color: white;
+  color: var(--main-active-pills-font-color);
 }
 
-/* Flex for sidepanel and figure */
-.flex-child {
-  flex: 1;
+p {
+  color: var(--main-font-color);
+  font-family: var(--main-font-family);
+  font-size: var(--main-font-size);
 }
 
-/* First child of container: sidepanel */
-.flex-child:first-child:not(h1) {
-  margin-right: 20px;
-  padding: 25px;
-  flex: 0 0 300px;
+h1 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: var(--main-color);
 }
 
-/* Box with radio buttons */
-.selector-box {
-  margin-bottom: 15px;
+p+h1 {
+  margin-top: 2rem;
 }
 
-/* Radio button */
-label {
-  margin: 5px 5px 5px 0;
+h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: var(--main-color);
 }
 
-input {
-  margin: 0 5px 0 0;
+ul {
+  margin-bottom: 2rem;
 }
 
-/* Tab-style unselected */
-.tab.jsx-3468109796 {
-  font-size: 1.2rem;
-  border-radius: 4px;
+.contact {
+  font-size: 1rem;
   font-weight: bold;
   color: var(--main-color);
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-left: 0.5rem;
 }
 
-/* Tab-style selected */
-.tab--selected.jsx-3468109796 {
-  color: var(--main-color) !important;
-}
-
-/* Table-style - does not work... */
-.dash-table-container .dash-spreadsheet-container .dash-spreadsheet-inner table {
-  font-family: Helvetica, sans-serif;
-}
-
-/* Div for whole page*/
-.whole-page-div+.whole-page-div {
-  margin-top: 55px;
-}
-
-/* Div for whole page*/
-.contact {
-  color: var(--main-color);
+/* Distance between radio button and text */
+input {
+  margin: 0 0.5rem 0 0;
 }
 
 /* List points */

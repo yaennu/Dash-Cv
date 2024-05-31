@@ -21,13 +21,8 @@
 * Add SourceAddress to firewall rule on Azure.
 
 # TODO
-* flex containers machen, damit mobile ansicht einigermaßen passt
-* nur gewisse max grösse und centering
-* nav bar ein-/ ausblendbar machen oder nach oben verschieben?
-* plot farben aus css?
-* GE VKG link
+* GE KKG link
 * Catchy phrase about the website
-* Buttons sehbarer machen
 * legend von radar plot nach unten
 * skills radio buttons nach rechts
 * foto von sidebar nach unten

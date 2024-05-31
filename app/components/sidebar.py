@@ -9,13 +9,11 @@ def sidebar():
         children=[
             html.Div(
                 className="contact",
-                children=["YANNICK SCHWARZ"],
-                style={"margin-top": "0px"},
+                children=["Yannick Schwarz"],
             ),
             html.Div(
                 className="contact",
                 children=["+41 79 810 25 04"],
-                style={"margin-top": "0px"},
             ),
             html.Div(
                 className="contact",
