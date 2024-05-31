@@ -18,7 +18,7 @@ layout = html.Div(
                     children=[
                         html.H4("Skills:"),
                         dcc.RadioItems(
-                            ["Technical", "Social", "Methodical"],
+                            db.Skills.Skill.unique(),
                             "Technical",
                             id="Radio",
                         ),
@@ -41,33 +41,70 @@ layout = html.Div(
     Input(component_id="Radio", component_property="value"),
 )
 def incoming_plot(Radio):
-    if Radio == "Technical":
-        polar_data = db.Skills[db.Skills["Skill"] == "Technical"]
-    elif Radio == "Social":
-        polar_data = db.Skills[db.Skills["Skill"] == "Social"]
-    elif Radio == "Methodical":
-        polar_data = db.Skills[db.Skills["Skill"] == "Methodical"]
-    Categories = pd.unique(polar_data.Bezeichnung)
+
+    polar_data = db.Skills[db.Skills["Skill"] == Radio]
+    experience = polar_data[polar_data["Level"] == "Ist"].Value.reset_index(drop=True)
+    r_experience = pd.concat(
+        [
+            experience,
+            experience[
+                [
+                    0,
+                ]
+            ],
+        ]
+    )
+
+    categories = pd.unique(polar_data.Bezeichnung)
+    theta_cat = pd.concat(
+        [
+            pd.Series(categories),
+            pd.Series(categories)[
+                [
+                    0,
+                ]
+            ],
+        ]
+    )
+
     fig = go.Figure()
     fig = fig.add_trace(
         go.Scatterpolar(
-            r=polar_data[polar_data["Level"] == "Soll"].Value,
-            theta=Categories,
-            fill="toself",
-            name="Interesse",
-        )
-    )
-    fig = fig.add_trace(
-        go.Scatterpolar(
-            r=polar_data[polar_data["Level"] == "Ist"].Value,
-            theta=Categories,
+            r=r_experience,
+            theta=theta_cat,
             fill="toself",
             name="Erfahrung",
+            # marker_color="blue",
         )
     )
+    if Radio == "Technical":
+        interest = polar_data[polar_data["Level"] == "Soll"].Value.reset_index(
+            drop=True
+        )
+        r_interest = pd.concat(
+            [
+                interest,
+                interest[
+                    [
+                        0,
+                    ]
+                ],
+            ]
+        )
+        fig = fig.add_trace(
+            go.Scatterpolar(
+                r=r_interest,
+                theta=theta_cat,
+                name="Interesse",
+                # marker_color="blue",
+            )
+        )
     fig = fig.update_layout(
         polar=dict(radialaxis=dict(visible=True, range=[0, 5])),
-        showlegend=False,
+        showlegend=True,
+    )
+    fig.update_traces(
+        hovertemplate="%{theta}: %{r}",
     )
 
     return fig

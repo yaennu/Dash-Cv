@@ -1,15 +1,11 @@
 /* Define color */
 :root {
-  --main-color: #8957e5;
-  --main-inactive-color: #8957e547;
-  --main-hover-color: #e6ffe6;
-  --main-sidebar-background: #e6ffe6;
-  --main-border-color: #009900;
-  --main-font-color: black;
-  --main-title-font-color: #8957e5;
-  --main-background-color: white;
-  --main-font-family: Helvetica;
-  --main-font-size: 0.9em;
+  --main-color: #6c26ee;
+  --main-inactive-color: #6c26ee41;
+  --main-font-color: #000000;
+  --main-font-family: Helvetica, Arial, sans-serif;
+  --main-font-weight: normal;
+  --main-font-size: 1rem;
   --main-margin-left: 25px;
 }
 
@@ -18,14 +14,14 @@ html {
 }
 
 body {
-  background: var(--main-background-color);
   color: var(--main-font-color);
   font-family: var(--main-font-family);
   font-size: var(--main-font-size);
+  font-weight: var(--main-font-weight);
 }
 
-p {
-  background: var(--main-background-color);
+p,
+.contact {
   color: var(--main-font-color);
   font-family: var(--main-font-family);
   font-size: var(--main-font-size);
@@ -48,7 +44,7 @@ h1 {
   margin-top: 30px;
   margin-bottom: 30px;
   margin-left: var(--main-margin-left);
-  color: var(--main-title-font-color);
+  color: var(--main-color);
 }
 
 h2 {
@@ -57,16 +53,16 @@ h2 {
   margin-top: 25px;
   margin-bottom: 20px;
   margin-left: var(--main-margin-left);
-  color: var(--main-title-font-color);
+  color: var(--main-color);
 }
 
 h3 {
   font-size: 1rem;
   font-weight: bold;
-  margin-top: 0px;
-  margin-bottom: 20px;
+  margin-top: 2rem;
+  margin-bottom: 0px;
   margin-left: var(--main-margin-left);
-  color: var(--main-title-font-color);
+  color: var(--main-color);
 }
 
 h4 {
@@ -74,7 +70,7 @@ h4 {
   font-weight: bold;
   margin-top: 0px;
   margin-bottom: 5px;
-  color: var(--main-title-font-color);
+  color: var(--main-color);
 }
 
 h5,
@@ -91,24 +87,24 @@ h6 {
 
 /* Nav: Sidebar with pages */
 .flex-sidebar {
-  background: url("ys.JPEG");
+  /*background: url("ys.JPEG");*/
   background-size: contain;
   background-repeat: no-repeat;
   margin: 0;
   border-radius: 4px;
-  padding: 300px 0;
+  padding: 0px 0;
   flex: 0 0 220px;
   font-weight: bold;
 }
 
 .nav-link {
-  color: black;
+  color: var(--main-color);
   font-size: 0.9rem;
 }
 
 .nav-pills .nav-link:hover {
   background-color: var(--main-inactive-color);
-  color: black;
+  color: var(--main-color);
 }
 
 .nav-pills .nav-link.active {
@@ -124,9 +120,6 @@ h6 {
 /* First child of container: sidepanel */
 .flex-child:first-child:not(h1) {
   margin-right: 20px;
-  border: 1px solid var(--main-border-color);
-  border-radius: 4px;
-  background-color: var(--main-sidebar-background);
   padding: 25px;
   flex: 0 0 300px;
 }
@@ -158,10 +151,27 @@ input {
   color: var(--main-color) !important;
 }
 
+/* Table-style - does not work... */
 .dash-table-container .dash-spreadsheet-container .dash-spreadsheet-inner table {
   font-family: Helvetica, sans-serif;
 }
 
+/* Div for whole page*/
 .whole-page-div+.whole-page-div {
-  margin-top: 33px;
+  margin-top: 55px;
+}
+
+/* Div for whole page*/
+.contact {
+  color: var(--main-color);
+}
+
+/* List points */
+::marker {
+  color: var(--main-font-color);
+}
+
+/* Link color */
+a {
+  color: var(--main-color);
 }

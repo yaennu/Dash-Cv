@@ -21,7 +21,13 @@
 * Add SourceAddress to firewall rule on Azure.
 
 # TODO
-* make page not go down
-* Social skills: data visualisation (attention to detail and get the gist), communication, problem solving
-* Kontaktdaten: mail adresse, handynummer, linkedin, alter, wohnort
-* Skills mit Sprachen ergänzen, Linkedin skills einbeziehen
+* flex containers machen, damit mobile ansicht einigermaßen passt
+* nur gewisse max grösse und centering
+* nav bar ein-/ ausblendbar machen oder nach oben verschieben?
+* plot farben aus css?
+* GE VKG link
+* Catchy phrase about the website
+* Buttons sehbarer machen
+* legend von radar plot nach unten
+* skills radio buttons nach rechts
+* foto von sidebar nach unten
