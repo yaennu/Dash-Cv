@@ -21,8 +21,7 @@
 * Add SourceAddress to firewall rule on Azure.
 
 # TODO
-* GE KKG link
 * Catchy phrase about the website
-* legend von radar plot nach unten
-* skills radio buttons nach rechts
-* foto von sidebar nach unten
+* table formatieren
+* Skills csv neu hochladen
+* linkedin button

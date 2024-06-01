@@ -32,6 +32,7 @@ fig.update_layout(
     height=300,
     margin=dict(l=0, r=0, b=0, t=0, pad=4),
 )
+fig.update_traces(hovertemplate="%{text}")
 
 # Prepare data for table
 table_data = db.Cv[["Thema", "Start", "Ende", "Ort", "Bezeichnung"]]
@@ -42,12 +43,7 @@ layout = html.Div(
         html.H1("Timeline"),
         html.P(
             [
-                """Hello and welcome to my website. My name is Yannick 
-                    Zürich. I am passionate about many things, but especially 
-                    about data. First I like to dive deep into the data, but 
-                    then my goal is to get a direct benefit from the data. I 
-                    focus on visualising the benefits of the data in a simple 
-                    and straightforward way.""",
+                """Say something about this CV timeline.""",
             ]
         ),
         html.Div(

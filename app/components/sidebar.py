@@ -40,6 +40,16 @@ def sidebar():
                 vertical=True,
                 pills=True,
             ),
+            html.Div(
+                className="portrait-container",
+                children=[
+                    html.Img(
+                        className="rounded-img",
+                        src="assets/ys.jpeg",
+                        width="220px",
+                    ),
+                ],
+            ),
             # dbc.Button(
             #    "LinkedIn",
             #    href="https://www.linkedin.com/in/yannick-schwarz-313203159/",

@@ -3,18 +3,25 @@ import pandas as pd
 import plotly.graph_objects as go
 import utils.DbData as db
 from dash import Input, Output, callback, dcc, html
+from py_plot_ge import plotly_ge as pg
+
 
 dash.register_page(__name__, name="Skills")
 
 
 layout = html.Div(
-    className="flex-container",
+    className="flex-plot-with-radio",
     children=[
         html.Div(
-            className="flex-child",
+            className="dash-graph",
+            children=[
+                dcc.Graph(id="SkillPlot"),
+            ],
+        ),
+        html.Div(
+            className="center-div",
             children=[
                 html.Div(
-                    className="selector-box",
                     children=[
                         html.H1("Skills:"),
                         dcc.RadioItems(
@@ -24,12 +31,6 @@ layout = html.Div(
                         ),
                     ],
                 ),
-            ],
-        ),
-        html.Div(
-            className="flex-child",
-            children=[
-                dcc.Graph(id="SkillPlot"),
             ],
         ),
     ],
@@ -74,7 +75,7 @@ def incoming_plot(Radio):
             theta=theta_cat,
             fill="toself",
             name="Erfahrung",
-            # marker_color="blue",
+            marker_color="#6c26ee",
         )
     )
     if Radio == "Technical":
@@ -96,13 +97,17 @@ def incoming_plot(Radio):
                 r=r_interest,
                 theta=theta_cat,
                 name="Interesse",
-                # marker_color="orange",
+                marker_color="#ff8000",
             )
         )
+    pg.plotly_gelayout(
+        fig,
+        font_size=14,
+    )
     fig = fig.update_layout(
         polar=dict(radialaxis=dict(visible=True, range=[0, 5])),
-        showlegend=True,
-        font=dict(family="Arial", size=14),
+        height=400,
+        width=550,
     )
     fig.update_traces(
         hovertemplate="%{theta}: %{r}",
