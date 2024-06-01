@@ -10,30 +10,44 @@ dash.register_page(__name__, name="Skills")
 
 
 layout = html.Div(
-    className="flex-plot-with-radio",
     children=[
-        html.Div(
-            className="dash-graph",
-            children=[
-                dcc.Graph(id="SkillPlot"),
-            ],
+        html.H1("Skills"),
+        html.P(
+            [
+                """Here you can explore the skills I have acquired through 
+                my education and work experience. Use the radio button on the 
+                right to switch between technical, social, methodological and 
+                linguistic skills. The difference between my experience and my 
+                interest should not be taken too seriously. \U0001F609""",
+            ]
         ),
         html.Div(
-            className="center-div",
+            className="flex-plot-with-radio",
             children=[
                 html.Div(
+                    className="dash-graph",
                     children=[
-                        html.H1("Skills:"),
-                        dcc.RadioItems(
-                            db.Skills.Skill.unique(),
-                            "Technical",
-                            id="Radio",
+                        dcc.Graph(id="SkillPlot"),
+                    ],
+                ),
+                html.Div(
+                    className="center-div",
+                    children=[
+                        html.Div(
+                            children=[
+                                html.H1("Skills:"),
+                                dcc.RadioItems(
+                                    db.Skills.Skill.unique(),
+                                    "Technical",
+                                    id="Radio",
+                                ),
+                            ],
                         ),
                     ],
                 ),
             ],
         ),
-    ],
+    ]
 )
 
 
@@ -74,7 +88,7 @@ def incoming_plot(Radio):
             r=r_experience,
             theta=theta_cat,
             fill="toself",
-            name="Erfahrung",
+            name="Experience",
             marker_color="#6c26ee",
         )
     )
@@ -96,7 +110,7 @@ def incoming_plot(Radio):
             go.Scatterpolar(
                 r=r_interest,
                 theta=theta_cat,
-                name="Interesse",
+                name="Interest",
                 marker_color="#ff8000",
             )
         )

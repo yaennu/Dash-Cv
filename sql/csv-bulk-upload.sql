@@ -1,4 +1,4 @@
-DROP TABLE Cv.Skills;
+DROP TABLE Cv.Cv;
 
 CREATE TABLE Cv.Cv (
     Thema NVARCHAR(50) NOT NULL,
@@ -22,7 +22,7 @@ CREATE TABLE Cv.Interests (
     Wert TINYINT NOT NULL
 );
 
-CREATE SCHEMA Cv;
+--CREATE SCHEMA Cv;
 
 /* BULK INSERT does not work
 BULK INSERT Cv.Cv

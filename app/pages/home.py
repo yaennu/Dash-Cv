@@ -44,14 +44,28 @@ layout = html.Div(
                 """ in Swiss health 
                       insurance and the validation of the data (about 100 
                       million records per year). Besides the main focus, 
-                      various small and large side projects were tackled by 
-                      our two-person data science team, which I led for 
-                      three years.""",
+                      various small and large side projects (see below) were 
+                      tackled by our two-person data science team, which 
+                      I led for three years.""",
             ]
         ),
         html.P(
-            """Catchy phrase about the website
-                    """
+            [
+                """Now you can explore my website and find out more about me. On 
+            the left you will find the website menu where you can switch to 
+            my """,
+                dcc.Link(
+                    "CV",
+                    href="/cv",
+                ),
+                """ in timeline or tabular form and explore the """,
+                dcc.Link(
+                    "skills",
+                    href="/skills",
+                ),
+                """ I have 
+            acquired throughout my education and career.""",
+            ]
         ),
         html.H1("Projects"),
         html.Ul(
