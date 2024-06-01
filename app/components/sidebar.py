@@ -24,6 +24,17 @@ def sidebar():
                         target="_blank",
                     )
                 ],
+            ),
+            html.A(
+                className="contact",
+                href="https://www.linkedin.com/in/yannick-schwarz-313203159",
+                children=[
+                    html.Img(
+                        src="assets/LinkedIn.svg",
+                        className="sidebar-svg",
+                    ),
+                ],
+                target="_blank",
                 style={"margin-bottom": "50px"},
             ),
             dbc.Nav(
@@ -50,10 +61,5 @@ def sidebar():
                     ),
                 ],
             ),
-            # dbc.Button(
-            #    "LinkedIn",
-            #    href="https://www.linkedin.com/in/yannick-schwarz-313203159/",
-            #    target="_blank",
-            # ),
         ],
     )

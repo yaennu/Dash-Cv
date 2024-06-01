@@ -43,7 +43,11 @@ layout = html.Div(
         html.H1("Timeline"),
         html.P(
             [
-                """Say something about this CV timeline.""",
+                """This is my CV as a timeline with four different categories: 
+                work, education, coding and diverse things which are related
+                to my work. If you want to know more about a specific point, in 
+                the timeline, just hover over the point or look up the details
+                in the table below.""",
             ]
         ),
         html.Div(

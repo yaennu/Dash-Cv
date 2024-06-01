@@ -53,8 +53,8 @@ body {
 .dash-graph {
   display: flex;
   margin: 0;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 /* Nav: Sidebar with pages */
@@ -68,14 +68,23 @@ body {
   font-weight: bold;
 }
 
+/* Portrait image in sidebar */
 .portrait-container {
   display: flex;
   justify-content: center;
   margin-top: 5rem;
 }
 
+/* Rounded borders for portrait image */
 .rounded-img {
   border-radius: var(--main-border-radius);
+}
+
+/* Linkedin logo in sidebar */
+.sidebar-svg {
+  width: 5rem;
+  height: auto;
+  margin-bottom: 5rem;
 }
 
 /* Navigation pill inactive */

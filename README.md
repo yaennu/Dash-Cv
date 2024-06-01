@@ -21,7 +21,5 @@
 * Add SourceAddress to firewall rule on Azure.
 
 # TODO
-* Catchy phrase about the website
 * table formatieren
-* Skills csv neu hochladen
-* linkedin button
+* bei skills sind Bezeichnungen abgeschnitten
