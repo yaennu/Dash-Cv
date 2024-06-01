@@ -22,6 +22,8 @@ CREATE TABLE Cv.Interests (
     Wert TINYINT NOT NULL
 );
 
+CREATE SCHEMA Cv;
+
 /* BULK INSERT does not work
 BULK INSERT Cv.Cv
 FROM 'C:\\DefaultWD\\cv.csv'

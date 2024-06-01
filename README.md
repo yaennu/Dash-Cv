@@ -21,7 +21,7 @@
 * Add SourceAddress to firewall rule on Azure.
 
 # TODO
-* make page not go down
-* Social skills: data visualisation (attention to detail and get the gist), communication, problem solving
-* Kontaktdaten: mail adresse, handynummer, linkedin, alter, wohnort
-* Skills mit Sprachen ergänzen, Linkedin skills einbeziehen
+* Catchy phrase about the website
+* table formatieren
+* Skills csv neu hochladen
+* linkedin button
