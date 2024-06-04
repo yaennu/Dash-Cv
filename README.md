@@ -23,3 +23,11 @@
 # TODO
 * table formatieren
 * bei skills sind Bezeichnungen abgeschnitten
+* probieren mobile tauglich zu machen: sidebar auch flex machen?
+* verbesserungen notieren
+* technical skills sind nicht verbunden, bei allen skills legend einblenden
+* 2025 bei timeline aus tabelle nehmen
+* Foto zu about me
+* bootstrap brauchen
+* bootstrap auf liste setzen
+https://community.plotly.com/t/how-to-implement-a-sidebar-that-stays-in-the-viewport/65038

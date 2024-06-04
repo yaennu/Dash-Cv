@@ -7,36 +7,6 @@ from dash import dcc
 def sidebar():
     return html.Div(
         children=[
-            html.Div(
-                className="contact",
-                children=["Yannick Schwarz"],
-            ),
-            html.Div(
-                className="contact",
-                children=["+41 79 810 25 04"],
-            ),
-            html.Div(
-                className="contact",
-                children=[
-                    dcc.Link(
-                        "yannick.schwarz@bluewin.ch",
-                        href="mailto:yannick.schwarz@bluewin.ch",
-                        target="_blank",
-                    )
-                ],
-            ),
-            html.A(
-                className="contact",
-                href="https://www.linkedin.com/in/yannick-schwarz-313203159",
-                children=[
-                    html.Img(
-                        src="assets/LinkedIn.svg",
-                        className="sidebar-svg",
-                    ),
-                ],
-                target="_blank",
-                style={"margin-bottom": "50px"},
-            ),
             dbc.Nav(
                 [
                     dbc.NavLink(
@@ -52,14 +22,43 @@ def sidebar():
                 pills=True,
             ),
             html.Div(
-                className="portrait-container",
+                className="contact",
+                children=["Yannick Schwarz"],
+                style={"margin-top": "2rem"},
+            ),
+            html.Div(
+                className="contact",
+                children=["+41 79 810 25 04"],
+            ),
+            html.Div(
+                className="contact",
                 children=[
-                    html.Img(
-                        className="rounded-img",
-                        src="assets/ys.jpeg",
-                        width="220px",
-                    ),
+                    dcc.Link(
+                        "Mail me!",
+                        href="mailto:yannick.schwarz@bluewin.ch",
+                        target="_blank",
+                    )
                 ],
             ),
+            html.Div(
+                className="contact",
+                children=[
+                    dcc.Link(
+                        "LinkedIn",
+                        href="https://www.linkedin.com/in/yannick-schwarz-313203159",
+                        target="_blank",
+                    )
+                ],
+            ),
+            # html.Div(
+            #    className="portrait-container",
+            #    children=[
+            #        html.Img(
+            #            className="rounded-img",
+            #            src="assets/ys.jpeg",
+            #            width="220px",
+            #        ),
+            #    ],
+            # ),
         ],
     )

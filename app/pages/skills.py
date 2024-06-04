@@ -35,7 +35,6 @@ layout = html.Div(
                     children=[
                         html.Div(
                             children=[
-                                html.H1("Skills:"),
                                 dcc.RadioItems(
                                     db.Skills.Skill.unique(),
                                     "Technical",

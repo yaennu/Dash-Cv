@@ -35,7 +35,7 @@ body {
 
 /* Main content container (default: column stacking) */
 .flex-child {
-  margin-left: 7rem;
+  margin-left: 5rem;
 }
 
 /* Plot with radio selection on the left */
@@ -80,13 +80,6 @@ body {
   border-radius: var(--main-border-radius);
 }
 
-/* Linkedin logo in sidebar */
-.sidebar-svg {
-  width: 5rem;
-  height: auto;
-  margin-bottom: 5rem;
-}
-
 /* Navigation pill inactive */
 .nav-link {
   color: var(--main-color);
@@ -116,6 +109,7 @@ p {
 h1 {
   font-size: 1rem;
   font-weight: bold;
+  margin-top: 8px;
   margin-bottom: 0.5rem;
   color: var(--main-color);
 }
