@@ -7,47 +7,66 @@ dash.register_page(__name__, name="Home", path="/")
 
 layout = dbc.Container(
     children=[
-        html.H1("About Me"),
-        html.P(
+        dbc.Row(
             [
-                """Hello and welcome to my website. My name is Yannick 
+                dbc.Col(
+                    [
+                        html.H1("About Me"),
+                        html.P(
+                            [
+                                """Hello and welcome to my website. My name is Yannick 
                     Schwarz. I was born and raised in """,
-                dcc.Link(
-                    "Bern",
-                    href="https://www.bscyb.ch/",
-                    target="_blank",
-                ),
-                """, but now live in 
+                                dcc.Link(
+                                    "Bern",
+                                    href="https://www.bscyb.ch/",
+                                    target="_blank",
+                                ),
+                                """, but now live in 
                     Zürich. I am passionate about many things, but especially 
                     about data. First I like to dive deep into the data, but 
                     then my goal is to get a direct benefit from the data. I 
                     focus on visualising the benefits of the data in a simple 
                     and straightforward way.""",
-            ]
-        ),
-        html.P(
-            [
-                """I studied economics and was introduced to data and the 
+                            ]
+                        ),
+                        html.P(
+                            [
+                                """I studied economics and was introduced to data and the 
                     programming language R during my master studies at the
                       University of Bern. After my Masters I worked for five 
                       years at the """,
-                dcc.Link(
-                    "Gemeinsame Einrichtung KVG",
-                    href="https://www.kvg.org/",
-                    target="_blank",
-                ),
-                """. My main focus was the calculation of """,
-                dcc.Link(
-                    "risk adjustment",
-                    href="https://www.kvg.org/versicherer/risikoausgleich/",
-                    target="_blank",
-                ),
-                """ in Swiss health 
+                                dcc.Link(
+                                    "Gemeinsame Einrichtung KVG",
+                                    href="https://www.kvg.org/",
+                                    target="_blank",
+                                ),
+                                """. My main focus was the calculation of """,
+                                dcc.Link(
+                                    "risk adjustment",
+                                    href="https://www.kvg.org/versicherer/risikoausgleich/",
+                                    target="_blank",
+                                ),
+                                """ in Swiss health 
                       insurance and the validation of the data (about 100 
                       million records per year). Besides the main focus, 
                       various small and large side projects (see below) were 
                       tackled by our two-person data science team, which 
                       I led for three years.""",
+                            ]
+                        ),
+                    ],
+                    width=8,
+                ),
+                dbc.Col(
+                    [
+                        html.Img(
+                            className="rounded-img",
+                            src="assets/ys.jpeg",
+                            width="220px",
+                        ),
+                    ],
+                    width=4,
+                ),
             ]
         ),
         html.P(
