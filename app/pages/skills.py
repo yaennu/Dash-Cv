@@ -4,12 +4,13 @@ import plotly.graph_objects as go
 import utils.DbData as db
 from dash import Input, Output, callback, dcc, html
 from py_plot_ge import plotly_ge as pg
+import dash_bootstrap_components as dbc
 
 
 dash.register_page(__name__, name="Skills")
 
 
-layout = html.Div(
+layout = dbc.Container(
     children=[
         html.H1("Skills"),
         html.P(
@@ -21,30 +22,19 @@ layout = html.Div(
                 interest should not be taken too seriously. \U0001F609""",
             ]
         ),
-        html.Div(
-            className="flex-plot-with-radio",
-            children=[
-                html.Div(
-                    className="dash-graph",
-                    children=[
-                        dcc.Graph(id="SkillPlot"),
-                    ],
+        dbc.Row(
+            [
+                dbc.Col(
+                    dcc.Graph(id="SkillPlot"),
                 ),
-                html.Div(
-                    className="center-div",
-                    children=[
-                        html.Div(
-                            children=[
-                                dcc.RadioItems(
-                                    db.Skills.Skill.unique(),
-                                    "Technical",
-                                    id="Radio",
-                                ),
-                            ],
-                        ),
-                    ],
+                dbc.Col(
+                    dcc.RadioItems(
+                        db.Skills.Skill.unique(),
+                        "Technical",
+                        id="Radio",
+                    ),
                 ),
-            ],
+            ]
         ),
     ]
 )

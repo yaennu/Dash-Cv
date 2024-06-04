@@ -5,7 +5,7 @@ import dash_bootstrap_components as dbc
 dash.register_page(__name__, name="Home", path="/")
 
 
-layout = html.Div(
+layout = dbc.Container(
     children=[
         html.H1("About Me"),
         html.P(
