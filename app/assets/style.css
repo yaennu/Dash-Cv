@@ -1,6 +1,7 @@
 /* Define color */
 :root {
   --main-color: #6c26ee;
+  --main-side-color: #6c26ee41;
   --main-inactive-pills-background-color: #6c26ee41;
   --main-active-pills-font-color: #ffffff;
   --main-font-color: #000000;
@@ -23,29 +24,22 @@ body {
   margin: 0 auto;
 }
 
-/* Rounded borders for portrait image */
-.rounded-img {
-  border-radius: var(--main-border-radius);
+.container {
+  padding-right: 0px;
 }
 
-/* Navigation pill inactive */
+.navbar {
+  background-color: var(--main-side-color) !important;
+  border-radius: var(--main-border-radius);
+  margin-bottom: 1rem;
+}
+
 .nav-link {
   color: var(--main-color);
-  background-color: var(--main-inactive-pills-background-color);
   font-size: 1rem;
-  margin-bottom: 7px;
-}
-
-/* Navigation pill hover */
-.nav-pills .nav-link:hover {
-  background-color: var(--main-color);
-  color: var(--main-active-pills-font-color);
-}
-
-/* Navigation pill active */
-.nav-pills .nav-link.active {
-  background-color: var(--main-color);
-  color: var(--main-active-pills-font-color);
+  padding-left: 12px;
+  padding-right: 12px;
+  font-weight: bold;
 }
 
 p {
@@ -76,15 +70,6 @@ ul {
   margin-bottom: 2rem;
 }
 
-.contact {
-  font-size: 1rem;
-  font-weight: bold;
-  color: var(--main-color);
-  padding-left: 16px;
-  padding-right: 16px;
-  margin-left: 0.5rem;
-}
-
 /* Distance between radio button and text */
 input {
   margin: 0 0.5rem 0 0;
@@ -98,4 +83,9 @@ input {
 /* Link color */
 a {
   color: var(--main-color);
+}
+
+/* Rounded borders for portrait image */
+.rounded-img {
+  border-radius: var(--main-border-radius);
 }

@@ -30,4 +30,5 @@
 * Foto zu about me
 * bootstrap brauchen
 * bootstrap auf liste setzen
-https://community.plotly.com/t/how-to-implement-a-sidebar-that-stays-in-the-viewport/65038
+* foto
+* chatbot api?
