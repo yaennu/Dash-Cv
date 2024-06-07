@@ -1,9 +1,7 @@
 /* Define color */
 :root {
   --main-color: #6c26ee;
-  --main-side-color: #6c26ee41;
-  --main-inactive-pills-background-color: #6c26ee41;
-  --main-active-pills-font-color: #ffffff;
+  --main-side-color: #decbff;
   --main-font-color: #000000;
   --main-font-family: Helvetica, Arial, sans-serif;
   --main-font-weight: normal;

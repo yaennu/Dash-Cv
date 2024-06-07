@@ -52,16 +52,16 @@ layout = dbc.Container(
             ]
         ),
         dcc.Graph(id="CvPlot", figure=fig),
-        # html.H1("Table"),
-        # dash_table.DataTable(
-        #    data=table_data.to_dict("records"),
-        #    columns=[{"name": i, "id": i} for i in table_data],
-        #    filter_action="native",
-        #    sort_action="native",
-        #    selected_columns=[],
-        #    page_current=0,
-        #    page_size=10,
-        #    style_cell={"textAlign": "left"},
-        # ),
+        html.H1("Table"),
+        dash_table.DataTable(
+            data=table_data.to_dict("records"),
+            columns=[{"name": i, "id": i} for i in table_data],
+            filter_action="native",
+            sort_action="native",
+            selected_columns=[],
+            page_current=0,
+            page_size=10,
+            style_cell={"textAlign": "left"},
+        ),
     ],
 )
