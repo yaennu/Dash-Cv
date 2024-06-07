@@ -4,12 +4,13 @@ import plotly.graph_objects as go
 import utils.DbData as db
 from dash import Input, Output, callback, dcc, html
 from py_plot_ge import plotly_ge as pg
+import dash_bootstrap_components as dbc
 
 
 dash.register_page(__name__, name="Skills")
 
 
-layout = html.Div(
+layout = dbc.Container(
     children=[
         html.H1("Skills"),
         html.P(
@@ -21,31 +22,27 @@ layout = html.Div(
                 interest should not be taken too seriously. \U0001F609""",
             ]
         ),
-        html.Div(
-            className="flex-plot-with-radio",
-            children=[
-                html.Div(
-                    className="dash-graph",
-                    children=[
-                        dcc.Graph(id="SkillPlot"),
-                    ],
-                ),
-                html.Div(
-                    className="center-div",
-                    children=[
-                        html.Div(
-                            children=[
-                                html.H1("Skills:"),
-                                dcc.RadioItems(
-                                    db.Skills.Skill.unique(),
-                                    "Technical",
-                                    id="Radio",
-                                ),
-                            ],
+        dbc.Row(
+            [
+                dbc.Col(
+                    [
+                        dcc.RadioItems(
+                            db.Skills.Skill.unique(),
+                            "Technical",
+                            id="Radio",
+                            style={"font-size": "0.95rem"},
                         ),
                     ],
+                    width={"xs": 12, "sm": 2, "md": 2, "lg": 2, "xl": 2},
+                    align="center",
                 ),
-            ],
+                dbc.Col(
+                    [
+                        dcc.Graph(id="SkillPlot"),
+                    ],
+                    width={"xs": 12, "sm": 10, "md": 10, "lg": 10, "xl": 10},
+                ),
+            ]
         ),
     ]
 )
@@ -120,8 +117,6 @@ def incoming_plot(Radio):
     )
     fig = fig.update_layout(
         polar=dict(radialaxis=dict(visible=True, range=[0, 5])),
-        height=400,
-        width=550,
     )
     fig.update_traces(
         hovertemplate="%{theta}: %{r}",

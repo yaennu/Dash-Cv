@@ -23,3 +23,7 @@
 # TODO
 * table formatieren
 * bei skills sind Bezeichnungen abgeschnitten
+* technical skills sind nicht verbunden, bei allen skills legend einblenden
+* 2025 bei timeline aus tabelle nehmen
+* foto
+* chatbot api?

@@ -1,8 +1,7 @@
 /* Define color */
 :root {
   --main-color: #6c26ee;
-  --main-inactive-pills-background-color: #6c26ee41;
-  --main-active-pills-font-color: #ffffff;
+  --main-side-color: #decbff;
   --main-font-color: #000000;
   --main-font-family: Helvetica, Arial, sans-serif;
   --main-font-weight: normal;
@@ -19,92 +18,26 @@ body {
   font-family: var(--main-font-family);
   font-size: var(--main-font-size);
   font-weight: var(--main-font-weight);
-  max-width: 1100px;
+  max-width: 750px;
   margin: 0 auto;
-  display: flex;
 }
 
-/* Container for sidepanel and main content */
-.flex-container {
-  display: flex;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
+.container {
+  padding-right: 0px;
 }
 
-/* Main content container (default: column stacking) */
-.flex-child {
-  margin-left: 7rem;
-}
-
-/* Plot with radio selection on the left */
-.flex-plot-with-radio {
-  display: flex;
-  justify-content: center;
-}
-
-/* Centering radio selection horizontally */
-.center-div {
-  margin: auto;
-}
-
-/* Container for plotly outputs */
-.dash-graph {
-  display: flex;
-  margin: 0;
-  margin-top: 1rem;
+.navbar {
+  background-color: var(--main-side-color) !important;
+  border-radius: var(--main-border-radius);
   margin-bottom: 1rem;
 }
 
-/* Nav: Sidebar with pages */
-.flex-sidebar {
-  background-size: contain;
-  background-repeat: no-repeat;
-  margin: 0;
-  border-radius: var(--main-border-radius);
-  padding: 0;
-  flex: 0 0 220px;
-  font-weight: bold;
-}
-
-/* Portrait image in sidebar */
-.portrait-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 5rem;
-}
-
-/* Rounded borders for portrait image */
-.rounded-img {
-  border-radius: var(--main-border-radius);
-}
-
-/* Linkedin logo in sidebar */
-.sidebar-svg {
-  width: 5rem;
-  height: auto;
-  margin-bottom: 5rem;
-}
-
-/* Navigation pill inactive */
 .nav-link {
   color: var(--main-color);
-  background-color: var(--main-inactive-pills-background-color);
   font-size: 1rem;
-  margin-bottom: 7px;
-}
-
-/* Navigation pill hover */
-.nav-pills .nav-link:hover {
-  background-color: var(--main-color);
-  color: var(--main-active-pills-font-color);
-}
-
-/* Navigation pill active */
-.nav-pills .nav-link.active {
-  background-color: var(--main-color);
-  color: var(--main-active-pills-font-color);
+  padding-left: 12px;
+  padding-right: 12px;
+  font-weight: bold;
 }
 
 p {
@@ -135,15 +68,6 @@ ul {
   margin-bottom: 2rem;
 }
 
-.contact {
-  font-size: 1rem;
-  font-weight: bold;
-  color: var(--main-color);
-  padding-left: 16px;
-  padding-right: 16px;
-  margin-left: 0.5rem;
-}
-
 /* Distance between radio button and text */
 input {
   margin: 0 0.5rem 0 0;
@@ -157,4 +81,9 @@ input {
 /* Link color */
 a {
   color: var(--main-color);
+}
+
+/* Rounded borders for portrait image */
+.rounded-img {
+  border-radius: var(--main-border-radius);
 }

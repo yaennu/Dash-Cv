@@ -1,7 +1,5 @@
 import dash
 import dash_bootstrap_components as dbc
-from dash import html
-from components import sidebar
 from dotenv import load_dotenv
 import os
 
@@ -13,18 +11,18 @@ app = dash.Dash(
     external_stylesheets=[dbc.themes.BOOTSTRAP],
 )
 
-app.layout = html.Div(
-    className="flex-container",
+nav = dbc.Navbar(
     children=[
-        html.Div(
-            className="flex-sidebar",
-            children=[sidebar()],
-        ),
-        html.Div(
-            className="flex-child",
-            children=[dash.page_container],
-        ),
+        dbc.NavItem(dbc.NavLink("Home", href="/")),
+        dbc.NavItem(dbc.NavLink("CV", href="/cv")),
+        dbc.NavItem(dbc.NavLink("Skills", href="/skills")),
     ],
+    sticky="top",
+)
+
+app.layout = dbc.Container(
+    children=[nav, dash.page_container],
+    fluid=True,
 )
 
 if __name__ == "__main__":

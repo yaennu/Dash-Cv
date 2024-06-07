@@ -4,6 +4,7 @@ import utils.DbData as db
 import pandas as pd
 import plotly.graph_objects as go
 from py_plot_ge import plotly_ge as pg
+import dash_bootstrap_components as dbc
 
 
 dash.register_page(__name__, name="CV")
@@ -38,7 +39,7 @@ fig.update_traces(hovertemplate="%{text}")
 table_data = db.Cv[["Thema", "Start", "Ende", "Ort", "Bezeichnung"]]
 
 # Create the layout
-layout = html.Div(
+layout = dbc.Container(
     children=[
         html.H1("Timeline"),
         html.P(
@@ -50,22 +51,17 @@ layout = html.Div(
                 in the table below.""",
             ]
         ),
-        html.Div(
-            className="dash-graph",
-            children=[
-                dcc.Graph(id="CvPlot", figure=fig),
-            ],
+        dcc.Graph(id="CvPlot", figure=fig),
+        html.H1("Table"),
+        dash_table.DataTable(
+            data=table_data.to_dict("records"),
+            columns=[{"name": i, "id": i} for i in table_data],
+            filter_action="native",
+            sort_action="native",
+            selected_columns=[],
+            page_current=0,
+            page_size=10,
+            style_cell={"textAlign": "left"},
         ),
-        # html.H1("Table"),
-        # dash_table.DataTable(
-        #    data=table_data.to_dict("records"),
-        #    columns=[{"name": i, "id": i} for i in table_data],
-        #    filter_action="native",
-        #    sort_action="native",
-        #    selected_columns=[],
-        #    page_current=0,
-        #    page_size=10,
-        #    style_cell={"textAlign": "left"},
-        # ),
     ],
 )
