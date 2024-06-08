@@ -25,5 +25,6 @@
 * bei skills sind Bezeichnungen abgeschnitten
 * technical skills sind nicht verbunden, bei allen skills legend einblenden
 * 2025 bei timeline aus tabelle nehmen
-* foto
+* plotly mobile tauglich? no zoom
+* foto ersetzen
 * chatbot api?

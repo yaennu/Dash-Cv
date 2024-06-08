@@ -33,14 +33,14 @@ layout = dbc.Container(
                             style={"font-size": "0.95rem"},
                         ),
                     ],
-                    width={"xs": 12, "sm": 2, "md": 2, "lg": 2, "xl": 2},
+                    width={"md": 2},
                     align="center",
                 ),
                 dbc.Col(
                     [
                         dcc.Graph(id="SkillPlot"),
                     ],
-                    width={"xs": 12, "sm": 10, "md": 10, "lg": 10, "xl": 10},
+                    width={"md": 10},
                 ),
             ]
         ),

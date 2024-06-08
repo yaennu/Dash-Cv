@@ -22,21 +22,25 @@ body {
   margin: 0 auto;
 }
 
+.container-fluid {
+  padding: 0;
+}
+
 .container {
-  padding-right: 0px;
+  /*padding: 0;*/
 }
 
 .navbar {
   background-color: var(--main-side-color) !important;
-  border-radius: var(--main-border-radius);
   margin-bottom: 1rem;
+  border-bottom: #6c26ee 2px solid;
 }
 
 .nav-link {
   color: var(--main-color);
   font-size: 1rem;
   padding-left: 12px;
-  padding-right: 12px;
+  padding-right: 16px;
   font-weight: bold;
 }
 

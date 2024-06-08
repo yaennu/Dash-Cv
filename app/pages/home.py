@@ -11,6 +11,34 @@ layout = dbc.Container(
             [
                 dbc.Col(
                     [
+                        html.Img(
+                            className="rounded-img",
+                            src="assets/ys.jpeg",
+                            width="220px",
+                            style={"padding-left": "0"},
+                        ),
+                        html.P(
+                            "Yannick Schwarz",
+                            style={
+                                "margin-top": "1.5rem",
+                                "margin-bottom": "0rem",
+                            },
+                        ),
+                        html.P(
+                            "079 810 25 04",
+                            style={"margin-bottom": "0rem"},
+                        ),
+                        dcc.Link(
+                            "Mail me!",
+                            href="mailto:yannick.schwarz@bluewin.ch",
+                            target="_blank",
+                        ),
+                    ],
+                    md=4,
+                    style={"margin-bottom": "2rem"},
+                ),
+                dbc.Col(
+                    [
                         html.H1("About Me"),
                         html.P(
                             [
@@ -55,17 +83,7 @@ layout = dbc.Container(
                             ]
                         ),
                     ],
-                    width=8,
-                ),
-                dbc.Col(
-                    [
-                        html.Img(
-                            className="rounded-img",
-                            src="assets/ys.jpeg",
-                            width="220px",
-                        ),
-                    ],
-                    width=4,
+                    md=8,
                 ),
             ]
         ),
