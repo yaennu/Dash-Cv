@@ -26,10 +26,6 @@ body {
   padding: 0;
 }
 
-.container {
-  /*padding: 0;*/
-}
-
 .navbar {
   background-color: var(--main-side-color) !important;
   margin-bottom: 1rem;

@@ -22,8 +22,7 @@
 
 # TODO
 * table formatieren
-* bei skills sind Bezeichnungen abgeschnitten
-* technical skills sind nicht verbunden, bei allen skills legend einblenden
+* technical skills sind nicht verbunden
 * 2025 bei timeline aus tabelle nehmen
 * plotly mobile tauglich? no zoom
 * foto ersetzen

@@ -25,22 +25,18 @@ layout = dbc.Container(
         dbc.Row(
             [
                 dbc.Col(
-                    [
-                        dcc.RadioItems(
-                            db.Skills.Skill.unique(),
-                            "Technical",
-                            id="Radio",
-                            style={"font-size": "0.95rem"},
-                        ),
-                    ],
-                    width={"md": 2},
+                    dcc.RadioItems(
+                        db.Skills.Skill.unique(),
+                        "Technical",
+                        id="Radio",
+                        style={"font-size": "0.95rem"},
+                    ),
+                    md=2,
                     align="center",
                 ),
                 dbc.Col(
-                    [
-                        dcc.Graph(id="SkillPlot"),
-                    ],
-                    width={"md": 10},
+                    dcc.Graph(id="SkillPlot"),
+                    md=10,
                 ),
             ]
         ),
@@ -55,7 +51,9 @@ layout = dbc.Container(
 def incoming_plot(Radio):
 
     polar_data = db.Skills[db.Skills["Skill"] == Radio]
-    experience = polar_data[polar_data["Level"] == "Ist"].Value.reset_index(drop=True)
+    experience = polar_data[polar_data["Level"] == "Ist"].Value.reset_index(
+        drop=True,
+    )
     r_experience = pd.concat(
         [
             experience,
@@ -117,6 +115,7 @@ def incoming_plot(Radio):
     )
     fig = fig.update_layout(
         polar=dict(radialaxis=dict(visible=True, range=[0, 5])),
+        showlegend=True,
     )
     fig.update_traces(
         hovertemplate="%{theta}: %{r}",
