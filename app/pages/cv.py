@@ -34,6 +34,9 @@ fig.update_layout(
     margin=dict(l=0, r=0, b=0, t=0, pad=4),
 )
 fig.update_traces(hovertemplate="%{text}")
+fig.update_xaxes(fixedrange=True)
+fig.update_yaxes(fixedrange=True)
+
 
 # Prepare data for table
 table_data = db.Cv[["Thema", "Start", "Ende", "Ort", "Bezeichnung"]]
