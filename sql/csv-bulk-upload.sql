@@ -1,25 +1,14 @@
 DROP TABLE Cv.Cv;
 
-CREATE TABLE Cv.Cv (
-    Thema NVARCHAR(50) NOT NULL,
-    ThemaValue TINYINT NOT NULL,
-    Start DATE NOT NULL,
-    Ende DATE NOT NULL,
-    Wert INT,
-    BezeichnungKurz NVARCHAR(50),
-    Bezeichnung NVARCHAR(100),
-    Ort NVARCHAR(100)
-);
-
-CREATE TABLE Cv.Hobbies (
-    Hobby NVARCHAR(50) NOT NULL,
-    Prozent TINYINT NOT NULL
-);
-
-CREATE TABLE Cv.Interests (
-    Thema NVARCHAR(50) NOT NULL,
-    Bezeichnung NVARCHAR(50) NOT NULL,
-    Wert TINYINT NOT NULL
+CREATE TABLE Cv.Test (
+    Theme NVARCHAR(50) NOT NULL,
+    Order TINYINT NOT NULL,
+    'Start' DATE NOT NULL,
+    'End' DATE NOT NULL,
+    'Value' INT,
+    DescriptionShort NVARCHAR(50),
+    'Description' NVARCHAR(100),
+    Place NVARCHAR(100)
 );
 
 --CREATE SCHEMA Cv;
@@ -33,6 +22,10 @@ WITH
     ROWTERMINATOR = '\n',
     FIRSTROW = 2
 );*/
+
+BULK INSERT Cv.Test
+FROM 'C:\\DefaultWD\\Dash-Cv\\Cv.csv'
+WITH ( FORMAT = 'CSV');
 
 
 ALTER TABLE Cv.Cv

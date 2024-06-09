@@ -21,9 +21,7 @@
 * Add SourceAddress to firewall rule on Azure.
 
 # TODO
-* table formatieren
-* technical skills sind nicht verbunden
-* 2025 bei timeline aus tabelle nehmen
-* plotly mobile tauglich? no zoom
+* technical skills sind nicht verbunden, Descriptions abgeschnitten (ordering?)
+* plotly mobile tauglich?
 * foto ersetzen
 * chatbot api?

@@ -5,20 +5,21 @@ import pandas as pd
 import plotly.graph_objects as go
 from py_plot_ge import plotly_ge as pg
 import dash_bootstrap_components as dbc
+import dash_ag_grid as dag
 
 
 dash.register_page(__name__, name="CV")
 
 # Create the figure
 fig = go.Figure()
-for Thema in pd.unique(db.Cv["Thema"]):
+for Category in pd.unique(db.Cv["Category"]):
     fig.add_trace(
         go.Scatter(
-            x=db.Cv[db.Cv["Thema"] == Thema]["Start"],
-            y=db.Cv[db.Cv["Thema"] == Thema]["ThemaWert"],
+            x=db.Cv[db.Cv["Category"] == Category]["Start"],
+            y=db.Cv[db.Cv["Category"] == Category]["Order"],
             mode="lines+markers",
-            name=Thema,
-            text=db.Cv[db.Cv["Thema"] == Thema]["Bezeichnung"],
+            name=Category,
+            text=db.Cv[db.Cv["Category"] == Category]["DescriptionShort"],
             line=dict(width=5),
             marker=dict(size=13),
         )
@@ -39,7 +40,20 @@ fig.update_yaxes(fixedrange=True)
 
 
 # Prepare data for table
-table_data = db.Cv[["Thema", "Start", "Ende", "Ort", "Bezeichnung"]]
+table_data = db.Cv[["Category", "Start", "End", "Place", "Description"]]
+col_names = table_data.columns
+columnDefs = [
+    {
+        "field": col_name,
+        "filter": True,
+        # "autoHeight": True,
+        "width": (
+            500 if col_name == "Description" else 250 if col_name == "Place" else 150
+        ),
+        "cellStyle": {"white-space": "normal"},
+    }
+    for col_name in col_names
+]
 
 # Create the layout
 layout = dbc.Container(
@@ -55,16 +69,15 @@ layout = dbc.Container(
             ]
         ),
         dcc.Graph(id="CvPlot", figure=fig),
-        html.H1("Table"),
-        dash_table.DataTable(
-            data=table_data.to_dict("records"),
-            columns=[{"name": i, "id": i} for i in table_data],
-            filter_action="native",
-            sort_action="native",
-            selected_columns=[],
-            page_current=0,
-            page_size=10,
-            style_cell={"textAlign": "left"},
+        html.H1("Table", style={"margin-top": "2rem"}),
+        dag.AgGrid(
+            id="getting-started-filter",
+            rowData=table_data.to_dict("records"),
+            columnDefs=columnDefs,
+            style={
+                "padding-bottom": "66px",
+                "height": "500px",
+            },
         ),
     ],
 )
