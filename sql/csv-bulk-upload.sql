@@ -1,4 +1,4 @@
-DROP TABLE Cv.Cv;
+DROP TABLE Cv.Skills;
 
 CREATE TABLE Cv.Test (
     Theme NVARCHAR(50) NOT NULL,
