@@ -21,7 +21,6 @@
 * Add SourceAddress to firewall rule on Azure.
 
 # TODO
-* technical skills sind nicht verbunden, Descriptions abgeschnitten (ordering?)
 * plotly mobile tauglich?
 * foto ersetzen
 * chatbot api?

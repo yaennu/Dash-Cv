@@ -26,7 +26,7 @@ layout = dbc.Container(
             [
                 dbc.Col(
                     dcc.RadioItems(
-                        db.Skills.Skill.unique(),
+                        ["Technical", "Social", "Methodical", "Language"],
                         "Technical",
                         id="Radio",
                         style={"font-size": "0.95rem"},
@@ -51,9 +51,9 @@ layout = dbc.Container(
 def incoming_plot(Radio):
 
     polar_data = db.Skills[db.Skills["Skill"] == Radio]
-    experience = polar_data[polar_data["Level"] == "Experience"].Value.reset_index(
-        drop=True,
-    )
+    polar_data.sort_values(by="Order", inplace=True)
+    experience = polar_data[polar_data["Level"] == "Experience"]
+    experience = experience["Value"].reset_index(drop=True)
     r_experience = pd.concat(
         [
             experience,
@@ -88,9 +88,8 @@ def incoming_plot(Radio):
         )
     )
     if Radio == "Technical":
-        interest = polar_data[polar_data["Level"] == "Interest"].Value.reset_index(
-            drop=True
-        )
+        interest = polar_data[polar_data["Level"] == "Interest"]
+        interest = interest["Value"].reset_index(drop=True)
         r_interest = pd.concat(
             [
                 interest,
