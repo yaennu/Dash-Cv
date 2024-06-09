@@ -51,6 +51,7 @@ layout = dbc.Container(
 def incoming_plot(Radio):
 
     polar_data = db.Skills[db.Skills["Skill"] == Radio]
+    polar_data = polar_data.copy()
     polar_data.sort_values(by="Order", inplace=True)
     experience = polar_data[polar_data["Level"] == "Experience"]
     experience = experience["Value"].reset_index(drop=True)
