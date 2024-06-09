@@ -51,7 +51,7 @@ layout = dbc.Container(
 def incoming_plot(Radio):
 
     polar_data = db.Skills[db.Skills["Skill"] == Radio]
-    experience = polar_data[polar_data["Level"] == "Ist"].Value.reset_index(
+    experience = polar_data[polar_data["Level"] == "Experience"].Value.reset_index(
         drop=True,
     )
     r_experience = pd.concat(
@@ -65,7 +65,7 @@ def incoming_plot(Radio):
         ]
     )
 
-    categories = pd.unique(polar_data.Bezeichnung)
+    categories = pd.unique(polar_data.Description)
     theta_cat = pd.concat(
         [
             pd.Series(categories),
@@ -88,7 +88,7 @@ def incoming_plot(Radio):
         )
     )
     if Radio == "Technical":
-        interest = polar_data[polar_data["Level"] == "Soll"].Value.reset_index(
+        interest = polar_data[polar_data["Level"] == "Interest"].Value.reset_index(
             drop=True
         )
         r_interest = pd.concat(
@@ -114,7 +114,12 @@ def incoming_plot(Radio):
         font_size=14,
     )
     fig = fig.update_layout(
-        polar=dict(radialaxis=dict(visible=True, range=[0, 5])),
+        polar=dict(
+            radialaxis=dict(
+                visible=True,
+                range=[0, 5],
+            )
+        ),
         showlegend=True,
     )
     fig.update_traces(
