@@ -15,6 +15,7 @@ py-plot-ge = {git = "https://github.com/yaennu/py_plot_ge"}
 nbformat = "^5.9.2"
 python-dotenv = "^1.0.1"
 pymssql = "^2.2.11"
+dash-ag-grid = "^31.2.0"
 
 
 [build-system]
