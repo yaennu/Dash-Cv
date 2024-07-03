@@ -13,7 +13,7 @@ layout = dbc.Container(
                     [
                         html.Img(
                             className="rounded-img",
-                            src="/assets/ys.jpeg",
+                            src="/assets/ys.png",
                             width="220px",
                             style={"padding-left": "0"},
                         ),
@@ -42,7 +42,7 @@ layout = dbc.Container(
                         html.H1("About Me"),
                         html.P(
                             [
-                                """Hello and welcome to my website Version 2. My name is Yannick 
+                                """Hello and welcome to my website Version 3. My name is Yannick 
                     Schwarz. I was born and raised in """,
                                 dcc.Link(
                                     "Bern",
