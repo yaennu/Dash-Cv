@@ -192,6 +192,7 @@ layout = dbc.Container(
                 html.Li("Image Repository: GitHub Packages"),
                 html.Li("Hosting: Azure Web App Service"),
                 html.Li("Code Editor: VS Code"),
+                html.Li("AI support: GitHub Copilot"),
             ]
         ),
     ],
