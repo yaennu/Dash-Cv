@@ -14,7 +14,7 @@ layout = dbc.Container(
                         html.Img(
                             className="rounded-img",
                             src="/assets/ys.png",
-                            width="220px",
+                            width="100%",
                             style={"padding-left": "0"},
                         ),
                         html.P(
@@ -25,13 +25,24 @@ layout = dbc.Container(
                             },
                         ),
                         html.P(
-                            "079 810 25 04",
+                            "+41 79 810 25 04",
                             style={"margin-bottom": "0rem"},
                         ),
-                        dcc.Link(
-                            "Mail me!",
-                            href="mailto:yannick.schwarz@bluewin.ch",
-                            target="_blank",
+                        html.P(
+                            dcc.Link(
+                                "Mail me!",
+                                href="mailto:yannick.schwarz@bluewin.ch",
+                                target="_blank",
+                            ),
+                            style={"margin-bottom": "0rem"},
+                        ),
+                        html.P(
+                            dcc.Link(
+                                "LinkedIn",
+                                href="https://www.linkedin.com/in/yannick-schwarz-313203159/",
+                                target="_blank",
+                            ),
+                            style={"margin-bottom": "0rem"},
                         ),
                     ],
                     md=4,
@@ -42,7 +53,7 @@ layout = dbc.Container(
                         html.H1("About Me"),
                         html.P(
                             [
-                                """Hello and welcome to my website Version 3. My name is Yannick 
+                                """Hello and welcome to my website. My name is Yannick 
                     Schwarz. I was born and raised in """,
                                 dcc.Link(
                                     "Bern",
@@ -89,14 +100,14 @@ layout = dbc.Container(
         ),
         html.P(
             [
-                """Now you can explore my website and find out more about me. On 
-            the left you will find the website menu where you can switch to 
-            my """,
+                """Now you can explore my website and find out more about me. 
+                Above in the website header you will find the menu where you 
+                can switch to my """,
                 dcc.Link(
                     "CV",
                     href="/cv",
                 ),
-                """ in timeline or tabular form and explore the """,
+                """ in timeline and tabular form or explore the """,
                 dcc.Link(
                     "skills",
                     href="/skills",
@@ -110,59 +121,79 @@ layout = dbc.Container(
             children=[
                 html.Li(
                     [
-                        """AI chat bot: develop a chat bot with a software 
-                        provider to query the knowledge base of the company."""
-                    ]
-                ),
-                html.Li(
-                    [
-                        dcc.Link(
-                            "Annual report",
-                            href="https://www.kvg.org/wp-content/uploads/jahresbericht-2023-risikoausgleich.html",
-                            target="_blank",
+                        """Reports in R markdown: """,
+                        html.Ul(
+                            [
+                                html.Li(
+                                    [
+                                        dcc.Link(
+                                            "Annual report",
+                                            href="https://www.kvg.org/wp-content/uploads/jahresbericht-2023-risikoausgleich.html",
+                                            target="_blank",
+                                        ),
+                                        """ on the execution of risk 
+                                            equalisation in health insurance 
+                                            in Switzerland.""",
+                                    ]
+                                ),
+                                html.Li(
+                                    """Annual calculation of the lump 
+                                            sum for a living donation in 
+                                            Switzerland."""
+                                ),
+                            ]
                         ),
-                        """ in R markdown: on the execution of risk 
-                        equalisation in health insurance in Switzerland.""",
                     ]
                 ),
                 html.Li(
                     [
+                        """Shiny Apps: """,
+                        html.Ul(
+                            [
+                                html.Li(
+                                    [
+                                        dcc.Link(
+                                            "Html table",
+                                            href="https://gekvg.shinyapps.io/sl-check-tool/",
+                                            target="_blank",
+                                        ),
+                                        """ (DT package) for searching monthly SL data.""",
+                                    ]
+                                ),
+                                html.Li(
+                                    """Employer reference creation (styled 
+                                    word document) based on a excel 
+                                    questionnaire (containerised with 
+                                    docker)."""
+                                ),
+                            ]
+                        ),
+                    ]
+                ),
+                html.Li(
+                    [
+                        """R package: Calculation of risk equalisation in 
+                        health insurance in Switzerland with test data
+                        (""",
                         dcc.Link(
-                            "RA calculation",
+                            "zip-file",
                             href="https://www.kvg.org/wp-content/uploads/parallelberechnung.zip",
                             target="_blank",
                         ),
-                        """ in R: zip-file of the calculation of risk equalisation in 
-                health insurance in Switzerland.""",
+                        ").",
                     ]
                 ),
                 html.Li(
                     [
-                        dcc.Link(
-                            "Shiny App",
-                            href="https://gekvg.shinyapps.io/sl-check-tool/",
-                            target="_blank",
-                        ),
-                        """ in R: html table (DT package) for searching monthly SL data.""",
+                        """AI chat bot: Development of a chat bot with a 
+                        software provider to query the knowledge base of 
+                        the company."""
                     ]
                 ),
                 html.Li(
                     [
-                        """Shiny App in R: employer reference creation 
-                (styled word document) based on a excel questionnaire 
-                (containerised with docker)."""
-                    ]
-                ),
-                html.Li(
-                    [
-                        """Dash App in Python: call center dashboard 
+                        """Dash App in Python: Call center dashboard 
                         (containerised with docker)."""
-                    ]
-                ),
-                html.Li(
-                    [
-                        """Annual report in R markdown: Annual calculation of the lump 
-                sum for a living donation in Switzerland."""
                     ]
                 ),
             ]
