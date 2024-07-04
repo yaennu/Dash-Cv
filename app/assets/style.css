@@ -18,26 +18,46 @@ body {
   font-family: var(--main-font-family);
   font-size: var(--main-font-size);
   font-weight: var(--main-font-weight);
-  max-width: 750px;
   margin: 0 auto;
+  height: 100%;
 }
 
 .container-fluid {
   padding: 0;
 }
 
+.container {
+  max-width: 750px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* Use viewport height to ensure it covers the full screen */
+}
+
 .navbar {
   background-color: var(--main-side-color) !important;
   margin-bottom: 1rem;
-  border-bottom: #6c26ee 2px solid;
+  justify-content: space-between;
 }
 
 .nav-link {
   color: var(--main-color);
   font-size: 1rem;
-  padding-left: 12px;
-  padding-right: 16px;
   font-weight: bold;
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.footer-style {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--main-side-color);
+  padding: 8px;
+  font-size: var(--main-font-size);
+  color: var(--main-color);
+  margin-top: auto;
+  /* This pushes the footer to the bottom */
 }
 
 p {
