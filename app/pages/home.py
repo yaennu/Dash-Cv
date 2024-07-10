@@ -76,7 +76,7 @@ layout = dbc.Container(
                       years at the """,
                                 dcc.Link(
                                     "Gemeinsame Einrichtung KVG",
-                                    href="https://www.kvg.org/",
+                                    href="https://www.kvg.org/ueber-uns/",
                                     target="_blank",
                                 ),
                                 """. My main focus was the calculation of """,
@@ -101,8 +101,7 @@ layout = dbc.Container(
         html.P(
             [
                 """Now you can explore my website and find out more about me. 
-                Above in the website header you will find the menu where you 
-                can switch to my """,
+                Above in the website header you can switch to my """,
                 dcc.Link(
                     "CV",
                     href="/cv",
@@ -187,13 +186,13 @@ layout = dbc.Container(
                     [
                         """AI chat bot: Development of a chat bot with a 
                         software provider to query the knowledge base of 
-                        the company."""
+                        the company (ongoing)."""
                     ]
                 ),
                 html.Li(
                     [
                         """Dash App in Python: Call center dashboard 
-                        (containerised with docker)."""
+                        (containerised with docker, ongoing)."""
                     ]
                 ),
             ]
