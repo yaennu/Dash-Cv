@@ -115,6 +115,19 @@ layout = dbc.Container(
             acquired throughout my education and career.""",
             ]
         ),
+        html.Div(
+            children=[
+                dbc.Button(
+                    "Download PDF CV",
+                    href="/static/Yannick-Schwarz-CV.pdf",
+                    download="Yannick-Schwarz-CV.pdf",
+                    external_link=True,
+                    color="primary",
+                    style={"margin-bottom": "2rem"},
+                ),
+            ],
+            className="d-grid gap-2",
+        ),
         html.H1("Projects"),
         html.Ul(
             children=[

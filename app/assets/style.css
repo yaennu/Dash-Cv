@@ -115,3 +115,10 @@ a {
 .rounded-img {
   border-radius: var(--main-border-radius);
 }
+
+/* Download button color */
+.btn-primary {
+  background-color: var(--main-color);
+  border-color: var(--main-color);
+  font-weight: bold;
+}
