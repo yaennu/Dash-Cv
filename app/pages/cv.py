@@ -1,5 +1,5 @@
 import dash
-from dash import dcc, html
+from dash import dcc, html, Input, Output, callback
 import utils.DbData as db
 import pandas as pd
 import plotly.graph_objects as go
@@ -65,7 +65,8 @@ layout = dbc.Container(
                 work, education, coding and diverse things which are related
                 to my work. If you want to know more about a specific point, in 
                 the timeline, just hover over the point or look up the details
-                in the table below.""",
+                in the table below or download my CV as pdf with the  
+                button at the end of this page.""",
             ]
         ),
         dcc.Graph(id="CvPlot", figure=fig),
@@ -78,6 +79,19 @@ layout = dbc.Container(
                 "padding-bottom": "66px",
                 "height": "500px",
             },
+        ),
+        html.Div(
+            children=[
+                dbc.Button(
+                    "Download PDF CV",
+                    href="/static/Yannick-Schwarz-CV.pdf",
+                    download="Yannick-Schwarz-CV.pdf",
+                    external_link=True,
+                    color="primary",
+                    style={"margin-bottom": "2rem"},
+                ),
+            ],
+            className="d-grid gap-2",
         ),
     ],
 )
