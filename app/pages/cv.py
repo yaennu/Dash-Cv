@@ -83,7 +83,7 @@ layout = dbc.Container(
         html.Div(
             children=[
                 dbc.Button(
-                    "Download PDF CV",
+                    "Download PDF CV (German)",
                     href="/static/Yannick-Schwarz-CV.pdf",
                     download="Yannick-Schwarz-CV.pdf",
                     external_link=True,

@@ -61,36 +61,45 @@ layout = dbc.Container(
                                     target="_blank",
                                 ),
                                 """, but now live in 
-                    Zürich. I am passionate about many things, but especially 
-                    about data. First I like to dive deep into the data, but 
-                    then my goal is to get a direct benefit from the data. I 
-                    focus on visualising the benefits of the data in a simple 
-                    and straightforward way.""",
+                    Zürich.""",
                             ]
                         ),
                         html.P(
+                            """As a data scientist, my main goal is to 
+                            contextualise data and present key findings in an 
+                            understandable and concise way using 
+                            visualisations. In addition am also passionate 
+                            about creating a simpler, more reproducible, more 
+                            understandable and therefore more efficient working 
+                            environment. As 
+                            a strong believer in agile structures and lifelong 
+                            learning, I am constantly educating myself, be it 
+                            by searching for new packages or learning new 
+                            technologies and languages."""
+                        ),
+                        html.P(
                             [
-                                """I studied economics and was introduced to data and the 
-                    programming language R during my master studies at the
-                      University of Bern. After my Masters I worked for five 
-                      years at the """,
+                                """With over five years of experience as 
+                            a data scientist at """,
                                 dcc.Link(
                                     "Gemeinsame Einrichtung KVG",
                                     href="https://www.kvg.org/ueber-uns/",
                                     target="_blank",
                                 ),
-                                """. My main focus was the calculation of """,
+                                """ (GE KVG), I have acquired a deep knowledge 
+                            of data science methodologies, which I have 
+                            successfully applied to numerous data analyses and 
+                            projects (see below). My main focus was the 
+                            calculation of """,
                                 dcc.Link(
                                     "risk adjustment",
                                     href="https://www.kvg.org/versicherer/risikoausgleich/",
                                     target="_blank",
                                 ),
-                                """ in Swiss health 
-                      insurance and the validation of the data (about 100 
-                      million records per year). Besides the main focus, 
-                      various small and large side projects (see below) were 
-                      tackled by our two-person data science team, which 
-                      I led for three years.""",
+                                """ in Swiss health
+                          insurance and the validation of the data (about 100
+                          million records per year). I led our two-person data 
+                          science team, for three years.""",
                             ]
                         ),
                     ],
@@ -112,13 +121,15 @@ layout = dbc.Container(
                     href="/skills",
                 ),
                 """ I have 
-            acquired throughout my education and career.""",
+            acquired throughout my education and career. For a more complete
+            picture of my professional experience, you can download my CV with 
+            the button below.""",
             ]
         ),
         html.Div(
             children=[
                 dbc.Button(
-                    "Download PDF CV",
+                    "Download PDF CV (German)",
                     href="/static/Yannick-Schwarz-CV.pdf",
                     download="Yannick-Schwarz-CV.pdf",
                     external_link=True,
