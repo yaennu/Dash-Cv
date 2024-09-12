@@ -18,6 +18,7 @@ nav = dbc.Navbar(
         dbc.NavItem(dbc.NavLink("Home", href="/")),
         dbc.NavItem(dbc.NavLink("CV", href="/cv")),
         dbc.NavItem(dbc.NavLink("Skills", href="/skills")),
+        dbc.NavItem(dbc.NavLink("Chat", href="/chat")),
     ],
     sticky="top",
 )
