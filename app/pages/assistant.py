@@ -42,7 +42,7 @@ def create_thread_and_run(user_input):
     run = submit_message(
         assistant_id=os.getenv("ASSISTANT_ID"),
         thread=thread,
-        message=user_input,
+        user_message=user_input,
     )
     return thread, run
 
