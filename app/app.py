@@ -18,6 +18,13 @@ nav = dbc.Navbar(
         dbc.NavItem(dbc.NavLink("Home", href="/")),
         dbc.NavItem(dbc.NavLink("CV", href="/cv")),
         dbc.NavItem(dbc.NavLink("Skills", href="/skills")),
+        dbc.NavItem(
+            dbc.NavLink(
+                "Assistant",
+                href="/assistant",
+                style={"color": "red"},
+            ),
+        ),
     ],
     sticky="top",
 )

@@ -16,6 +16,7 @@ nbformat = "^5.9.2"
 python-dotenv = "^1.0.1"
 pymssql = "^2.2.11"
 dash-ag-grid = "^31.2.0"
+openai = "^1.44.1"
 
 
 [build-system]

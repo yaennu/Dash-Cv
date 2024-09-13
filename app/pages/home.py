@@ -115,15 +115,21 @@ layout = dbc.Container(
                     "CV",
                     href="/cv",
                 ),
-                """ in timeline and tabular form or explore the """,
+                """ in timeline and tabular form, explore the """,
                 dcc.Link(
                     "skills",
                     href="/skills",
                 ),
-                """ I have 
-            acquired throughout my education and career. For a more complete
-            picture of my professional experience, you can download my CV with 
-            the button below.""",
+                """ I have acquired throughout my education and career or try 
+                the beta-version of my """,
+                dcc.Link(
+                    "CV-Assistant",
+                    href="/assistant",
+                    style={"color": "red"},
+                ),
+                """ and aks questions about my CV. For a more complete picture 
+                of my professional experience, you can download my CV with 
+                the button below.""",
             ]
         ),
         html.Div(
@@ -210,7 +216,12 @@ layout = dbc.Container(
                     [
                         """AI chat bot: Development of a chat bot with a 
                         software provider to query the knowledge base of 
-                        the company (ongoing)."""
+                        the company (ongoing, see also my """,
+                        dcc.Link(
+                            "CV-Assistant",
+                            href="/assistant",
+                        ),
+                        """).""",
                     ]
                 ),
                 html.Li(
@@ -246,6 +257,7 @@ layout = dbc.Container(
                 html.Li("Image Repository: GitHub Packages"),
                 html.Li("Hosting: Azure Web App Service"),
                 html.Li("Code Editor: VS Code"),
+                html.Li("AI-Assistant: OpenAI API, gpt-4o-mini"),
                 html.Li("AI support: GitHub Copilot"),
             ]
         ),
