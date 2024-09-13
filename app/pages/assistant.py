@@ -4,6 +4,7 @@ import dash_bootstrap_components as dbc
 from openai import OpenAI
 import os
 import time
+import re
 
 dash.register_page(__name__, name="Assistant")
 
@@ -39,9 +40,9 @@ def get_response(thread):
 def create_thread_and_run(user_input):
     thread = client.beta.threads.create()
     run = submit_message(
-        os.getenv("ASSISTANT_ID"),
-        thread,
-        user_input,
+        assistant_id=os.getenv("ASSISTANT_ID"),
+        thread=thread,
+        message=user_input,
     )
     return thread, run
 
@@ -57,7 +58,7 @@ def wait_on_run(run, thread):
     return run
 
 
-############## put in other script
+##############
 
 
 layout = dbc.Container(
@@ -106,4 +107,9 @@ def activate_chat(input_value):
         thread1, run1 = create_thread_and_run(input_value)
         run1 = wait_on_run(run1, thread1)
         response1 = get_response(thread1)
-        return response1.data[1].content[0].text.value
+        clean_response = re.sub(
+            "【.*?†source】",
+            "",
+            response1.data[1].content[0].text.value,
+        )
+        return clean_response

@@ -216,7 +216,12 @@ layout = dbc.Container(
                     [
                         """AI chat bot: Development of a chat bot with a 
                         software provider to query the knowledge base of 
-                        the company (ongoing)."""
+                        the company (ongoing, see also my """,
+                        dcc.Link(
+                            "CV-Assistant",
+                            href="/assistant",
+                        ),
+                        """).""",
                     ]
                 ),
                 html.Li(
@@ -252,6 +257,7 @@ layout = dbc.Container(
                 html.Li("Image Repository: GitHub Packages"),
                 html.Li("Hosting: Azure Web App Service"),
                 html.Li("Code Editor: VS Code"),
+                html.Li("AI-Assistant: OpenAI API, gpt-4o-mini"),
                 html.Li("AI support: GitHub Copilot"),
             ]
         ),
