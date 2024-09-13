@@ -115,15 +115,21 @@ layout = dbc.Container(
                     "CV",
                     href="/cv",
                 ),
-                """ in timeline and tabular form or explore the """,
+                """ in timeline and tabular form, explore the """,
                 dcc.Link(
                     "skills",
                     href="/skills",
                 ),
-                """ I have 
-            acquired throughout my education and career. For a more complete
-            picture of my professional experience, you can download my CV with 
-            the button below.""",
+                """ I have acquired throughout my education and career or try 
+                the beta-version of my """,
+                dcc.Link(
+                    "CV-Assistant",
+                    href="/assistant",
+                    style={"color": "red"},
+                ),
+                """ and aks questions about my CV. For a more complete picture 
+                of my professional experience, you can download my CV with 
+                the button below.""",
             ]
         ),
         html.Div(

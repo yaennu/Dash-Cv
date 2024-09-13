@@ -5,7 +5,7 @@ from openai import OpenAI
 import os
 import time
 
-dash.register_page(__name__, name="Chat")
+dash.register_page(__name__, name="Assistant")
 
 # Create the OpenAI client
 client = OpenAI(
@@ -13,7 +13,7 @@ client = OpenAI(
 )
 
 
-############## put in other script
+############## put in other script?
 # Submitting a message
 def submit_message(assistant_id, thread, user_message):
     client.beta.threads.messages.create(
@@ -63,16 +63,32 @@ def wait_on_run(run, thread):
 layout = dbc.Container(
     children=[
         html.H1("Chat with my CV"),
-        html.P("This is a chat where you can ask questions about my CV."),
-        dcc.Input(
+        html.P(
+            """Here you can ask my OpenAI assistant questions about my CV. 
+            The assistant will answer in the language in which you asked the 
+            question. The assistant will perform a file search on my CV and 
+            should not answer if it has not found the answer in my CV. But it 
+            is an AI, so watch out for hallucinations."""
+        ),
+        dbc.Input(
             id="user-input",
-            placeholder="This is a chat where you can ask questions about my CV.",
+            placeholder="Ask something about my CV.",
             type="text",
             debounce=True,
+            maxLength=500,
+            size="md",
+            style={"margin-bottom": "1rem"},
         ),
-        html.Div(
-            id="response-space",
-            children="",
+        dbc.Button(
+            children="Submit",
+            id="submit-btn",
+            style={"margin-bottom": "1rem"},
+        ),
+        dcc.Loading(
+            html.Div(
+                id="response-space",
+                children="",
+            ),
         ),
     ]
 )
@@ -87,23 +103,6 @@ def activate_chat(input_value):
     if not input_value:
         return "Please enter a question."
     else:
-        # chat_completion = client.chat.completions.create(
-        #    model="gpt-4o-mini",
-        #    max_tokens=150,
-        #    messages=[
-        #        {
-        #            "role": "system",
-        #            "content": "You are a helpful data science tutor.",
-        #        },
-        #        {
-        #            "role": "user",
-        #            "content": input_value,
-        #        },
-        #    ],
-        #    stream=False,
-        # )
-        # print(chat_completion)
-        # response = chat_completion.choices[0].message.content
         thread1, run1 = create_thread_and_run(input_value)
         run1 = wait_on_run(run1, thread1)
         response1 = get_response(thread1)
