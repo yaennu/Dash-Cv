@@ -31,7 +31,7 @@ layout = dbc.Container(
                         html.P(
                             dcc.Link(
                                 "Mail me!",
-                                href="mailto:yannick.schwarz@bluewin.ch",
+                                href="mailto:yannickschwarz@icloud.com",
                                 target="_blank",
                             ),
                             style={"margin-bottom": "0rem"},
@@ -201,15 +201,13 @@ layout = dbc.Container(
                 ),
                 html.Li(
                     [
-                        """R package: Calculation of risk equalisation in 
-                        health insurance in Switzerland with test data
-                        (""",
                         dcc.Link(
-                            "zip-file",
-                            href="https://www.kvg.org/wp-content/uploads/parallelberechnung.zip",
+                            "R package",
+                            href="https://github.com/gekvgra/GErapcg_public",
                             target="_blank",
                         ),
-                        ").",
+                        """: Calculation of risk equalisation in 
+                        health insurance in Switzerland with test data.""",
                     ]
                 ),
                 html.Li(

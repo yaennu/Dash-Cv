@@ -63,7 +63,7 @@ def wait_on_run(run, thread):
 
 layout = dbc.Container(
     children=[
-        html.H1("Chat with my CV"),
+        html.H1("Ask my CV"),
         html.P(
             """Here you can ask my OpenAI assistant questions about my CV. 
             The assistant will answer in the language in which you asked the 
