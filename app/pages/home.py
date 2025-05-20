@@ -127,7 +127,7 @@ layout = dbc.Container(
                     href="/assistant",
                     style={"color": "red"},
                 ),
-                """ and aks questions about my CV. For a more complete picture 
+                """ and ask questions about my CV. For a more complete picture 
                 of my professional experience, you can download my CV with 
                 the button below.""",
             ]
